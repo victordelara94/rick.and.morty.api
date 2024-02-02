@@ -1,24 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { Result } from './model/result';
+import { CardComponent } from './components/card/card.component';
+import { Character } from './model/character';
 import { RepositoryService } from './services/repository.service';
 
 @Component({
   selector: 'up-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
   title = 'rick.and.morty.api';
-  result: Result[] = [];
+  character: Character[] = [];
   store = inject(RepositoryService);
   ngOnInit() {
-    this.store.getAll().subscribe((data) => (this.result = data));
+    this.store.getAll().subscribe((data) => (this.character = data));
   }
-  logItem(item: Result) {
-    this.result.map;
-    console.log(item, 'a');
+  logItem(item: Character) {
+    this.character.map;
+    console.log(item.name, 'a');
   }
 }

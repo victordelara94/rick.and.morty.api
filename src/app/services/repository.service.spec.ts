@@ -27,7 +27,7 @@ describe('RepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get results from the API', () => {
+  it('should get characters from the API', () => {
     service.getAll().subscribe(() => {});
 
     const req = httpTestingController.expectOne(
