@@ -13,13 +13,9 @@ import { RepositoryService } from './services/repository.service';
 })
 export class AppComponent implements OnInit {
   title = 'rick.and.morty.api';
-  character: Character[] = [];
+  characters: Character[] = [];
   store = inject(RepositoryService);
   ngOnInit() {
-    this.store.getAll().subscribe((data) => (this.character = data));
-  }
-  logItem(item: Character) {
-    this.character.map;
-    console.log(item.name, 'a');
+    this.store.getAll().subscribe((data) => (this.characters = data));
   }
 }

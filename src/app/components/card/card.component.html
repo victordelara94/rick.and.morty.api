@@ -1,6 +1,16 @@
-<li>Name: {{character.name}}</li>
-<li>Gender: {{character.gender}}</li>
-<li>Origin: {{character.origin.name}}</li>
-<li>Location: {{character.location.name}}</li>
-<li>Status: {{character.status}}</li>
+<img src={{character.image}} alt="">
+<div>
+  <span><strong>Name: </strong> {{character.name}}</span>
+  <span><strong>Gender:</strong>{{character.gender}}</span>
+  <span><strong>Origin: </strong> {{character.origin.name}}</span>
+  <span><strong>Location: </strong> {{character.location.name}}</span>
+  <span><strong>Status: </strong> {{character.status}}</span>
+</div>
+<button (click)="openForm()">Edit</button>
+@if (isOpen) {
+
+<up-update-form [character]="character" (event)="closeForm($event)"></up-update-form>
+
+
+}
 <!-- <li>Created at: {{character.created}}</li> -->
