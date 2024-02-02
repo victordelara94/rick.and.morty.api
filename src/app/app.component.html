@@ -2,9 +2,9 @@
 
 
 <ul #refLista class="list">
-  @for (item of result ; track item.id) {
-  <li [title]="item.id" [id]="item.id">
-    <span>{{item.name}}</span>
-  </li>
+  @for (item of character ; track item.id) {
+
+  <up-card [title]="item.id" [id]="item.id" [character]="item"></up-card>
+
   }
 </ul>

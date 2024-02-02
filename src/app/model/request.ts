@@ -1,4 +1,4 @@
-import { Result } from './result';
+import { Character } from './character';
 
 export interface Request {
   info: {
@@ -7,5 +7,5 @@ export interface Request {
     next: string;
     prev: null;
   };
-  results: Result[];
+  results: Character[];
 }
