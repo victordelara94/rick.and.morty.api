@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { RepositoryService } from './services/repository.service';
 
 @Component({
   selector: 'up-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule],
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
