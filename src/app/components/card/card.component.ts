@@ -1,16 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Character } from '../../model/character';
+import { UpdateFormComponent } from '../update.form/update.form.component';
 
 @Component({
   selector: 'up-card',
   standalone: true,
-  imports: [],
+  imports: [UpdateFormComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() character!: Character;
-  ngOnInit(): void {
-    console.log(this.character);
+  isOpen = false;
+  openForm() {
+    this.isOpen = true;
+    console.log(this.isOpen);
+  }
+  closeForm(event: boolean) {
+    this.isOpen = event;
   }
 }
