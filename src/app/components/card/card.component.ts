@@ -14,7 +14,6 @@ export class CardComponent {
   isOpen = false;
   openForm() {
     this.isOpen = true;
-    console.log(this.isOpen);
   }
   closeForm(event: boolean) {
     this.isOpen = event;

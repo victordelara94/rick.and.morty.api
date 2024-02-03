@@ -17,6 +17,6 @@ export class AppComponent implements OnInit {
   character: Character[] = [];
   store = inject(StoreService);
   ngOnInit() {
-    this.store.loadFirstCharacters(10);
+    this.store.loadAllCharacters();
   }
 }
