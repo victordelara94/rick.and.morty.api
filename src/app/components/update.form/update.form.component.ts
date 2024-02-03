@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Character } from '../../model/character';
+import { StoreService } from '../../services/store.service';
 
 @Component({
   selector: 'up-update-form',
@@ -12,8 +13,10 @@ import { Character } from '../../model/character';
 export class UpdateFormComponent {
   @Input() character!: Character;
   @Output() event = new EventEmitter<boolean>();
+  store = inject(StoreService);
   handleForm() {
-    console.log(this.character, 'form');
+    this.store.updateCharacters(this.character);
+    this.event.next(false);
   }
   emitClose() {
     this.event.next(false);
