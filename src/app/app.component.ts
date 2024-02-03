@@ -9,4 +9,7 @@ import { CardComponent } from './components/card/card.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
+
 export default class AppComponent {}
+
+
