@@ -1,4 +1,3 @@
-<h2>Rick and Morty</h2>
 <ul #refLista class="list">
   @for (item of store.getAllCharacters()|async ; track item.id) {
   <up-card [id]="item.id" [character]="item"></up-card>
