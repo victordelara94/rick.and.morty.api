@@ -17,4 +17,12 @@ export class RepositoryService {
       })
     );
   }
+  getSpecificNumberOfCharacters(quantity: number[]): Observable<Character[]> {
+    const url = this.urlBase + `/${quantity}`;
+    return this.http.get<Character[]>(url).pipe(
+      map((data: Character[]) => {
+        return data;
+      })
+    );
+  }
 }
