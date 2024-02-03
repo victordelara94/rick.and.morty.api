@@ -1,0 +1,9 @@
+<div>
+  <button class="close-button" (click)="emitClose()">❌</button>
+  <form #refForm (submit)="handleForm()">
+    <input type="text" name="name" [(ngModel)]="character.name" />
+    <input type="text" name="location.name" [(ngModel)]="character.location.name" />
+    <input type="text" name="status" [(ngModel)]="character.status" />
+    <button type="submit">Send</button>
+  </form>
+</div>

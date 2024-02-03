@@ -2,7 +2,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20%;
+  align-items: center;
+  width: 20rem;
+  height: 32rem;
   padding: 0.2rem;
-  border: solid black;
+  border: solid rgb(165, 155, 155);
+  border-radius: 10px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+}
+button {
+  max-width: 5rem;
+  background-color: rgb(190, 175, 143);
+  border-radius: 5px;
 }

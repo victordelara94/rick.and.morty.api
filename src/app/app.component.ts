@@ -13,6 +13,7 @@ import { StoreService } from './services/store.service';
 })
 export class AppComponent implements OnInit {
   title = 'rick.and.morty.api';
+
   character: Character[] = [];
   store = inject(StoreService);
   ngOnInit() {
