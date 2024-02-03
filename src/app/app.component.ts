@@ -1,22 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
-import { Character } from './model/character';
-import { StoreService } from './services/store.service';
-
 @Component({
   selector: 'up-root',
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  title = 'rick.and.morty.api';
-
-  character: Character[] = [];
-  store = inject(StoreService);
-  ngOnInit() {
-    this.store.loadFirstCharacters(10);
-  }
-}
+export default class AppComponent {}
