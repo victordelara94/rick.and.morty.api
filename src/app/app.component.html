@@ -1,10 +1,6 @@
-<h1><img src="../assets/tittle.png" height="100" width="500" alt="Rick And Morty" /></h1>
-
-
-<ul #refList class="list">
-  @for (item of characters ; track item.id) {
-  <li>
-    <up-card [title]="item.id" [id]="item.id" [character]="item"></up-card>
-  </li>
+<h2>Rick and Morty</h2>
+<ul #refLista class="list">
+  @for (item of store.getFirstCharacters()|async ; track item.id) {
+  <up-card [title]="item.id" [id]="item.id" [character]="item"></up-card>
   }
 </ul>

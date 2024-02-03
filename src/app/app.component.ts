@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { CardComponent } from './components/card/card.component';
 import { Character } from './model/character';
-import { RepositoryService } from './services/repository.service';
+import { StoreService } from './services/store.service';
 
 @Component({
   selector: 'up-root',
@@ -13,9 +13,10 @@ import { RepositoryService } from './services/repository.service';
 })
 export class AppComponent implements OnInit {
   title = 'rick.and.morty.api';
-  characters: Character[] = [];
-  store = inject(RepositoryService);
+
+  character: Character[] = [];
+  store = inject(StoreService);
   ngOnInit() {
-    this.store.getAll().subscribe((data) => (this.characters = data));
+    this.store.loadFirstCharacters(10);
   }
 }
