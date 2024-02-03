@@ -23,6 +23,9 @@ export class StoreService {
       .subscribe((data) => this.allCharacters$.next(data));
   }
   loadFirstCharacters(quantity: number) {
+    if (!quantity) {
+      quantity = 10;
+    }
     const ids = [];
     for (let number = 1; number <= quantity; number++) {
       ids.push(number);
