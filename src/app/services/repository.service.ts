@@ -20,8 +20,8 @@ export class RepositoryService {
   getSpecificNumberOfCharacters(quantity: number[]): Observable<Character[]> {
     const url = this.urlBase + `${quantity}`;
     return this.http.get<Character[]>(url).pipe(
-      map((data: Character[]) => {
-        return data;
+      map((data: Character[] | Character) => {
+        return Array.isArray(data) ? data : [data];
       })
     );
   }
@@ -29,7 +29,7 @@ export class RepositoryService {
     const url = this.urlBase + `?${key}=${value}`;
     return this.http.get<Request>(url).pipe(
       map((data: Request) => {
-        return data.results;
+        return Array.isArray(data.results) ? data.results : [data.results];
       })
     );
   }

@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
   }
   handleClick(): void {
     this.quantity = this.refInput.nativeElement.value;
+    console.log(this.quantity);
     this.store.loadFirstCharacters(this.quantity);
   }
 }
