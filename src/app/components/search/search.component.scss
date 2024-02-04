@@ -1,0 +1,27 @@
+:host {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  height: 32px;
+  background-color: #fff;
+  overflow: hidden;
+}
+input {
+  border-radius: 10px;
+  border-width: 1px;
+  font-size: 14px;
+  border-radius: 10px;
+  background: transparent;
+  padding: 5px;
+  color: #333;
+  margin: 10px;
+}
+button {
+  height: 28px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  border-width: 0;
+  background-color: rgb(190, 175, 143);
+  border-radius: 5px;
+}

@@ -1,5 +1,41 @@
 header {
   display: flex;
+  padding: 10px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: sans-serif;
+  border-bottom: 4px rgb(255, 178, 13) ridge;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.74);
+  h1 {
+    color: #ffffff;
+  }
+  nav {
+    background: rgb(190, 175, 143);
+    border-radius: 10px;
+    border-bottom: 4px solid #666768;
+    ul {
+      list-style: none;
+      margin: 0px auto;
+
+      li {
+        line-height: 55px;
+        float: left;
+        a {
+          border-radius: 10px;
+          display: block;
+          color: rgb(0, 0, 0);
+          font-weight: 600;
+          text-decoration: none;
+          padding-inline: 12px;
+          transition: all 300ms;
+        }
+
+        a:hover {
+          background: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
 }
