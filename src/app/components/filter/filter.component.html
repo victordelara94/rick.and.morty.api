@@ -1,0 +1,7 @@
+<label for="status">Select character status</label>
+<select name="status" [(ngModel)]="selectedStatus" id="status" (change)="selectSearch()">
+  <option value="">All</option>
+  <option value="alive">Alive</option>
+  <option value="dead">Dead</option>
+  <option value="unknow">Unknow</option>
+</select>

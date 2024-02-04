@@ -15,6 +15,6 @@ export default class TableComponent implements OnInit {
   character: Character[] = [];
   store = inject(StoreService);
   ngOnInit() {
-    this.store.getFirstCharacters();
+    this.store.getAllCharacters();
   }
 }

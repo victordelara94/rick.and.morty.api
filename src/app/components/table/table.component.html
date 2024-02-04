@@ -5,7 +5,7 @@
   <th>Species</th>
   <th>Gender</th>
   <th>Origin</th>
-  @for (item of store.getFirstCharacters()|async ; track item.id) {
+  @for (item of store.getAllCharacters()|async ; track item.id) {
 
   <tr [id]="item.id">
     <td>{{item.name}}</td>

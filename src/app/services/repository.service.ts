@@ -8,7 +8,7 @@ import { Request } from '../model/request';
   providedIn: 'root',
 })
 export class RepositoryService {
-  urlBase = 'https://rickandmortyapi.com/api/character';
+  urlBase = 'https://rickandmortyapi.com/api/character/';
   http = inject(HttpClient);
   getAll(): Observable<Character[]> {
     return this.http.get<Request>(this.urlBase).pipe(
@@ -18,10 +18,18 @@ export class RepositoryService {
     );
   }
   getSpecificNumberOfCharacters(quantity: number[]): Observable<Character[]> {
-    const url = this.urlBase + `/${quantity}`;
+    const url = this.urlBase + `${quantity}`;
     return this.http.get<Character[]>(url).pipe(
       map((data: Character[]) => {
         return data;
+      })
+    );
+  }
+  getByProperty(key: string, value: string) {
+    const url = this.urlBase + `?${key}=${value}`;
+    return this.http.get<Request>(url).pipe(
+      map((data: Request) => {
+        return data.results;
       })
     );
   }
