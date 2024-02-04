@@ -1,5 +1,8 @@
-<label for="status">Select character status</label>
-<select name="status" [(ngModel)]="selectedStatus" id="status" (change)="selectSearch()">
+<input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search characters"
+  (input)="selectSearch($event)">
+
+<label for=" status">Select character status</label>
+<select name="status" [(ngModel)]="selectedStatus" id="status" (change)="selectSearch($event)">
   <option value="">All</option>
   <option value="alive">Alive</option>
   <option value="dead">Dead</option>

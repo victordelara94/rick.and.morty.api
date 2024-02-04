@@ -11,9 +11,13 @@ import { StoreService } from '../../services/store.service';
 })
 export class FilterComponent {
   selectedStatus = '';
-  suggestions = [];
+  searchTerm = '';
   store = inject(StoreService);
-  selectSearch() {
-    this.store.loadFilterCharacters('status', this.selectedStatus);
+  selectSearch(event: Event) {
+    if (event.type === 'change') {
+      this.store.loadFilterCharacters('status', this.selectedStatus);
+    } else {
+      this.store.loadFilterCharacters('name', this.searchTerm);
+    }
   }
 }
