@@ -1,11 +1,12 @@
 table {
+  margin: 10px;
   width: 100%;
-  border: 1px solid #000;
+  background: rgb(190, 175, 143);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 th,
 td {
-  all: unset;
+  border: 3px solid #666768;
 }
