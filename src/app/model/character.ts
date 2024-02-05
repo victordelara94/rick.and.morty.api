@@ -18,3 +18,7 @@ export interface Character {
     url: string;
   };
 }
+export interface Select {
+  key: string;
+  value: string;
+}

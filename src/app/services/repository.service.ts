@@ -10,10 +10,20 @@ import { Request } from '../model/request';
 export class RepositoryService {
   urlBase = 'https://rickandmortyapi.com/api/character/';
   http = inject(HttpClient);
-  getAll(): Observable<Character[]> {
-    return this.http.get<Request>(this.urlBase).pipe(
+  getAll(page: number): Observable<Character[]> {
+    const url = this.urlBase + `?page=${page}`;
+    return this.http.get<Request>(url).pipe(
       map((data: Request) => {
         return data.results;
+      })
+    );
+  }
+  getByProperty(key: string, value: string, page: number) {
+    const url = this.urlBase + `?page=${page}&${key}=${value}`;
+    console.log(url);
+    return this.http.get<Request>(url).pipe(
+      map((data: Request) => {
+        return Array.isArray(data.results) ? data.results : [data.results];
       })
     );
   }
@@ -22,14 +32,6 @@ export class RepositoryService {
     return this.http.get<Character[]>(url).pipe(
       map((data: Character[] | Character) => {
         return Array.isArray(data) ? data : [data];
-      })
-    );
-  }
-  getByProperty(key: string, value: string) {
-    const url = this.urlBase + `?${key}=${value}`;
-    return this.http.get<Request>(url).pipe(
-      map((data: Request) => {
-        return Array.isArray(data.results) ? data.results : [data.results];
       })
     );
   }
