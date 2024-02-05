@@ -1,5 +1,5 @@
-<input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search characters"
-  (input)="selectSearch($event)">
+<input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search characters">
+<button (click)="selectSearch($event)">Send</button>
 
 <label for=" status">Select character status</label>
 <select name="status" [(ngModel)]="selectedStatus" id="status" (change)="selectSearch($event)">

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Character } from '../model/character';
+import { Character, Select } from '../model/character';
 import { RepositoryService } from './repository.service';
 
 @Injectable({
@@ -9,6 +9,8 @@ import { RepositoryService } from './repository.service';
 export class StoreService {
   repository = inject(RepositoryService);
   allCharacters$ = new BehaviorSubject<Character[]>([]);
+  actualPage$ = new BehaviorSubject<number>(1);
+  filter$ = new BehaviorSubject<Select | null>(null);
 
   getAllCharacters() {
     return this.allCharacters$.asObservable();
@@ -16,7 +18,7 @@ export class StoreService {
 
   loadAllCharacters() {
     this.repository
-      .getAll()
+      .getAll(this.actualPage$.value)
       .subscribe((data) => this.allCharacters$.next(data));
   }
   loadFirstCharacters(quantity: number) {
@@ -27,13 +29,15 @@ export class StoreService {
     for (let number = 1; number <= quantity; number++) {
       ids.push(number);
     }
+
     this.repository.getSpecificNumberOfCharacters(ids).subscribe((data) => {
       this.allCharacters$.next(data);
     });
   }
-  loadFilterCharacters(key: string, value: string) {
+  loadFilterCharacters() {
+    const filter: Select = this.filter$.value!;
     this.repository
-      .getByProperty(key, value)
+      .getByProperty(filter.key, filter.value, this.actualPage$.value)
       .subscribe((data) => this.allCharacters$.next(data));
   }
 
@@ -43,5 +47,21 @@ export class StoreService {
         item.id === character.id ? character : item
       )
     );
+  }
+  setPage(count: number) {
+    if (count === 0) {
+      this.actualPage$.next(count + 1);
+    } else {
+      this.actualPage$.next(this.actualPage$.value + count);
+    }
+  }
+  setFilterActive(key: string, filter: string) {
+    this.filter$.next({ key, value: filter });
+  }
+  getFilter() {
+    return this.filter$.value;
+  }
+  getActualPage() {
+    return this.actualPage$.value;
   }
 }

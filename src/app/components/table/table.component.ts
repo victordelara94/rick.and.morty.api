@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Character } from '../../model/character';
 import { StoreService } from '../../services/store.service';
 import { SearchComponent } from '../search/search.component';
@@ -11,10 +11,7 @@ import { SearchComponent } from '../search/search.component';
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
 })
-export default class TableComponent implements OnInit {
+export default class TableComponent {
   character: Character[] = [];
   store = inject(StoreService);
-  ngOnInit() {
-    this.store.getAllCharacters();
-  }
 }

@@ -14,10 +14,12 @@ export class FilterComponent {
   searchTerm = '';
   store = inject(StoreService);
   selectSearch(event: Event) {
+    this.store.setPage(0);
     if (event.type === 'change') {
-      this.store.loadFilterCharacters('status', this.selectedStatus);
+      this.store.setFilterActive('status', this.selectedStatus);
     } else {
-      this.store.loadFilterCharacters('name', this.searchTerm);
+      this.store.setFilterActive('name', this.searchTerm);
     }
+    this.store.loadFilterCharacters();
   }
 }

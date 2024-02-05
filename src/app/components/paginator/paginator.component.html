@@ -1,0 +1,4 @@
+@if (store.getActualPage()>1) {
+<button (click)="setPage(-1)">Previous</button>
+}
+<button (click)="setPage(+1)">Next</button>
