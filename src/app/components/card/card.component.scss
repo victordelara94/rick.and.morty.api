@@ -10,6 +10,8 @@
   border-radius: 10px;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 1rem 0.3rem;
 }
 div {
   display: flex;
@@ -18,7 +20,10 @@ div {
   align-items: start;
 }
 button {
-  max-width: 5rem;
-  background-color: rgb(190, 175, 143);
-  border-radius: 5px;
+  width: 40%;
+  padding: 0.4rem 0;
+  border: none;
+  background-color: rgb(249, 203, 105);
+  border-radius: 8px;
+  cursor: pointer;
 }

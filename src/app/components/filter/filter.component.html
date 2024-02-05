@@ -1,10 +1,14 @@
-<input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search characters">
-<button (click)="selectSearch($event)">Send</button>
+<div class="searcher">
+  <input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search characters">
+  <button (click)="selectSearch($event)">Send</button>
+</div>
 
-<label for=" status">Select character status</label>
-<select name="status" [(ngModel)]="selectedStatus" id="status" (change)="selectSearch($event)">
-  <option value="">All</option>
-  <option value="alive">Alive</option>
-  <option value="dead">Dead</option>
-  <option value="unknow">Unknow</option>
-</select>
+<div class="filter">
+  <label for=" status">Select character status</label>
+  <select name="status" [(ngModel)]="selectedStatus" id="status" (change)="selectSearch($event)">
+    <option value="">All</option>
+    <option value="alive">Alive</option>
+    <option value="dead">Dead</option>
+    <option value="unknow">Unknow</option>
+  </select>
+</div>

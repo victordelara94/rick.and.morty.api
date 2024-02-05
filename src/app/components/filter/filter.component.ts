@@ -13,6 +13,7 @@ export class FilterComponent {
   selectedStatus = '';
   searchTerm = '';
   store = inject(StoreService);
+
   selectSearch(event: Event) {
     this.store.setPage(0);
     if (event.type === 'change') {

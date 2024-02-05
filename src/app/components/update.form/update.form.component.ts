@@ -14,9 +14,10 @@ export class UpdateFormComponent {
   @Input() character!: Character;
   @Output() event = new EventEmitter<boolean>();
   store = inject(StoreService);
+
   handleForm() {
     this.store.updateCharacters(this.character);
-    this.event.next(false);
+    this.emitClose();
   }
   emitClose() {
     this.event.next(false);

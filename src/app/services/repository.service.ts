@@ -20,7 +20,6 @@ export class RepositoryService {
   }
   getByProperty(key: string, value: string, page: number) {
     const url = this.urlBase + `?page=${page}&${key}=${value}`;
-    console.log(url);
     return this.http.get<Request>(url).pipe(
       map((data: Request) => {
         return Array.isArray(data.results) ? data.results : [data.results];
