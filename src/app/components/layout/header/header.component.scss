@@ -8,10 +8,14 @@ header {
   border-bottom: 4px rgb(255, 178, 13) ridge;
   font-size: 20px;
   background: rgba(0, 0, 0, 0.74);
+  margin-bottom: 1rem;
   h1 {
     color: #ffffff;
+    font-size: 4rem;
+    margin: 1rem;
   }
   nav {
+    margin: 1rem;
     background: rgb(190, 175, 143);
     border-radius: 10px;
     border-bottom: 4px solid #666768;
@@ -20,6 +24,7 @@ header {
       margin: 0px auto;
 
       li {
+        padding: 0 1rem;
         line-height: 55px;
         float: left;
         a {

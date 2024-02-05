@@ -13,7 +13,7 @@ import { PaginatorComponent } from '../paginator/paginator.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export default class homeComponent implements OnInit {
+export default class HomeComponent implements OnInit {
   character: Character[] = [];
   store = inject(StoreService);
   ngOnInit() {

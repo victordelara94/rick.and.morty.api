@@ -11,7 +11,6 @@ import { StoreService } from '../../services/store.service';
 })
 export class PaginatorComponent {
   @Output() eventPage = new EventEmitter<number>();
-  page = 1;
   store = inject(StoreService);
 
   setPage(count: number) {

@@ -11,10 +11,10 @@ import { StoreService } from '../../services/store.service';
   selector: 'up-select',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './search.component.html',
-  styleUrl: './search.component.scss',
+  templateUrl: './summary.filter.component.html',
+  styleUrl: './summary.filter.component.scss',
 })
-export class SearchComponent implements OnInit {
+export class SummaryFilterComponent implements OnInit {
   @ViewChild('refInput') refInput!: ElementRef;
   quantity = 0;
   store = inject(StoreService);
